@@ -1,0 +1,44 @@
+services:
+  # MongoDB Database
+  mongodb:
+    image: mongo:7
+    container_name: sweet-spot-db
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin123
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - sweet-spot-network
+
+  # Backend API
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sweet-spot-backend
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+      - PORT=5000
+      - MONGODB_URI=mongodb://admin:admin123@mongodb:27017/sweetshop?authSource=admin
+      - JWT_SECRET=your_super_secret_jwt_key_change_in_production
+    depends_on:
+      - mongodb
+    networks:
+      - sweet-spot-network
+    volumes:
+      - ./backend/static:/app/server/static
+
+networks:
+  sweet-spot-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
+    driver: local
