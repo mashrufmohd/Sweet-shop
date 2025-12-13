@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="48" fill="#FF69B4" stroke="#FF1493" stroke-width="2"/>
+  
+  <!-- Cupcake wrapper -->
+  <path d="M30 60 L35 75 L65 75 L70 60 Z" fill="#FFB6C1" stroke="#FF69B4" stroke-width="1.5"/>
+  <path d="M32 60 L37 72 L63 72 L68 60 Z" fill="#FFC0CB"/>
+  
+  <!-- Cupcake top (frosting) -->
+  <ellipse cx="50" cy="55" rx="22" ry="15" fill="#FFF0F5"/>
+  <path d="M28 55 Q35 45, 50 48 T72 55" fill="#FFE4E1"/>
+  
+  <!-- Cherry on top -->
+  <circle cx="50" cy="35" r="6" fill="#DC143C"/>
+  <path d="M50 35 Q48 30, 52 25" stroke="#8B0000" stroke-width="1.5" fill="none"/>
+  
+  <!-- Sprinkles -->
+  <rect x="42" y="50" width="2" height="6" fill="#FF6347" rx="1"/>
+  <rect x="56" y="48" width="2" height="6" fill="#4169E1" rx="1"/>
+  <rect x="48" y="52" width="2" height="5" fill="#FFD700" rx="1"/>
+  <rect x="52" y="50" width="2" height="5" fill="#32CD32" rx="1"/>
+  <rect x="38" y="52" width="2" height="4" fill="#FF69B4" rx="1"/>
+  <rect x="60" y="53" width="2" height="4" fill="#9370DB" rx="1"/>
+</svg>

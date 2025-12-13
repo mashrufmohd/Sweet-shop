@@ -2,10 +2,15 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import authRoutes from './routes/auth.js';
 import sweetsRoutes from './routes/sweets.js';
 import ordersRoutes from './routes/orders.js';
 import analyticsRoutes from './routes/analytics.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 dotenv.config({ path: './.env' });
 
@@ -51,10 +56,10 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(express.json());
-app.use('/static', express.static('static'));
+app.use('/static', express.static(path.join(__dirname, 'static')));
 
 // Serve frontend static files in production
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // API Root endpoint
 app.get('/api', (req, res) => {
@@ -69,7 +74,7 @@ app.use('/api/v1/analytics', analyticsRoutes);
 
 // Serve index.html for all other routes (SPA support)
 app.get('*', (req, res) => {
-  res.sendFile('index.html', { root: 'public' });
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Database Connection
