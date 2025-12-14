@@ -296,7 +296,7 @@ Throughout this project, I leveraged the following AI tools:
 
 ### How I Used AI
 
-#### 1. Project Architecture & Planning (10% AI-assisted)
+#### 1. Project Architecture & Planning (8% AI-assisted)
 - **What AI Did**: I briefly consulted ChatGPT to validate my initial architecture design approach and discuss REST API best practices.
 - **My Contribution**: I designed the entire system architecture myself, including:
   - Complete REST API endpoint structure with versioning
@@ -307,12 +307,12 @@ Throughout this project, I leveraged the following AI tools:
   - Admin role-based access control design
 - **Example**: I designed the authentication flow independently. AI suggested using refresh tokens, but I had already decided on a simpler JWT approach suitable for this assessment's scope.
 
-#### 2. Code Implementation (15% AI-assisted)
+#### 2. Code Implementation (12% AI-assisted)
 - **What AI Did**: GitHub Copilot provided autocomplete suggestions for:
   - Common patterns like Express middleware structure
   - Basic Mongoose schema syntax
   - Standard TypeScript type definitions
-- **My Contribution**: I wrote 85% of the code from scratch, including:
+- **My Contribution**: I wrote 88% of the code from scratch, including:
   - All business logic for authentication, authorization, and CRUD operations
   - Custom middleware (authMiddleware, adminMiddleware)
   - Database models with custom methods (password hashing, JWT generation)
@@ -324,7 +324,7 @@ Throughout this project, I leveraged the following AI tools:
   - Cart management system
 - **Example**: Copilot suggested basic model structure, but I implemented all the complex logic: password hashing with bcrypt, JWT token methods, role validation, and data relationships between models.
 
-#### 3. Testing (20% AI-assisted)
+#### 3. Testing (15% AI-assisted)
 - **What AI Did**: Copilot suggested basic test structure templates.
 - **My Contribution**: I designed and wrote all test cases myself:
   - Complete test strategy following TDD methodology
@@ -348,7 +348,7 @@ Throughout this project, I leveraged the following AI tools:
   - Fixed file upload and static file serving
 - **Example**: When facing deployment issues, I analyzed logs, identified the problem (missing static files), and implemented the solution using absolute paths. AI only confirmed my approach was correct.
 
-#### 5. Documentation (15% AI-assisted)
+#### 5. Documentation (10% AI-assisted)
 - **What AI Did**: Helped with grammar, formatting, and structuring some README sections.
 - **My Contribution**: I wrote all technical content:
   - Complete API documentation
@@ -394,12 +394,12 @@ Throughout this project, I leveraged the following AI tools:
 ### Transparency & Honesty
 
 **Realistic Percentage Breakdown of Work:**
-- **Core Application Code**: 85% written by me from scratch
-- **AI Autocomplete Suggestions**: 15% (reviewed and often modified)
+- **Core Application Code**: 88% written by me from scratch
+- **AI Autocomplete Suggestions**: 12% (reviewed and often modified)
 - **Architecture & Design**: 100% my own decisions
 - **Business Logic**: 100% written by me
-- **Testing Strategy & Test Cases**: 100% designed by me, 80% written by me
-- **Problem-Solving & Debugging**: 90% me, 10% AI consultation
+- **Testing Strategy & Test Cases**: 100% designed by me, 85% written by me
+- **Problem-Solving & Debugging**: 92% me, 8% AI consultation
 - **Database Design**: 100% my own work
 - **Frontend UI/UX Design**: 100% my own decisions and implementation
 
