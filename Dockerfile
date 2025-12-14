@@ -46,7 +46,7 @@ COPY --from=frontend-builder /app/frontend/dist ./server/public
 RUN mkdir -p ./server/static/images
 
 # Debug: List contents to verify
-RUN ls -la ./server/public || echo "Public directory not found"
+RUN echo "Contents of /app/server/public:" && ls -la ./server/public && ls -la ./server/public/assets || echo "Public directory check failed"
 
 # Expose port
 EXPOSE 5000
