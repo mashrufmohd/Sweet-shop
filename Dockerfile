@@ -45,6 +45,9 @@ COPY --from=frontend-builder /app/frontend/dist ./server/public
 # Create uploads directory
 RUN mkdir -p ./server/static/images
 
+# Debug: List contents to verify
+RUN ls -la ./server/public || echo "Public directory not found"
+
 # Expose port
 EXPOSE 5000
 

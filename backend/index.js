@@ -4,6 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import fs from 'fs';
 import authRoutes from './routes/auth.js';
 import sweetsRoutes from './routes/sweets.js';
 import ordersRoutes from './routes/orders.js';
@@ -74,7 +75,20 @@ app.use('/api/v1/analytics', analyticsRoutes);
 
 // Serve index.html for all other routes (SPA support)
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  const indexPath = path.join(__dirname, 'public', 'index.html');
+  
+  // Check if file exists
+  if (fs.existsSync(indexPath)) {
+    res.sendFile(indexPath);
+  } else {
+    // If no frontend built, send a helpful message
+    res.status(404).send(`
+      <h1>Sweet Shop API</h1>
+      <p>Frontend not found. The API is running at <a href="/api">/api</a></p>
+      <p>Public directory: ${path.join(__dirname, 'public')}</p>
+      <p>Looking for: ${indexPath}</p>
+    `);
+  }
 });
 
 // Database Connection
