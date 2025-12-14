@@ -18,7 +18,6 @@ dotenv.config({ path: './.env' });
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// CORS configuration
 const allowedOrigins = process.env.CORS_ORIGINS 
   ? process.env.CORS_ORIGINS.split(',')
   : [
@@ -29,10 +28,8 @@ const allowedOrigins = process.env.CORS_ORIGINS
 
 const corsOptions = {
   origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps or curl requests)
     if (!origin) return callback(null, true);
     
-    // Check if origin is in allowed list or matches patterns
     const isAllowed = allowedOrigins.some(allowedOrigin => {
       if (allowedOrigin instanceof RegExp) {
         return allowedOrigin.test(origin);
@@ -40,7 +37,6 @@ const corsOptions = {
       return allowedOrigin === origin;
     });
     
-    // Also allow .vercel.app and common deployment platforms
     const isVercel = /\.vercel\.app$/.test(origin);
     const isRailway = /\.railway\.app$/.test(origin);
     const isRender = /\.onrender\.com$/.test(origin);
@@ -58,30 +54,23 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use('/static', express.static(path.join(__dirname, 'static')));
-
-// Serve frontend static files in production
 app.use(express.static(path.join(__dirname, 'public')));
 
-// API Root endpoint
 app.get('/api', (req, res) => {
   res.json({ message: 'Welcome to Sweet Spot Manager API' });
 });
 
-// API Routes
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/sweets', sweetsRoutes);
 app.use('/api/v1/orders', ordersRoutes);
 app.use('/api/v1/analytics', analyticsRoutes);
 
-// Serve index.html for all other routes (SPA support)
 app.get('*', (req, res) => {
   const indexPath = path.join(__dirname, 'public', 'index.html');
   
-  // Check if file exists
   if (fs.existsSync(indexPath)) {
     res.sendFile(indexPath);
   } else {
-    // If no frontend built, send a helpful message
     res.status(404).send(`
       <h1>Sweet Shop API</h1>
       <p>Frontend not found. The API is running at <a href="/api">/api</a></p>
@@ -91,7 +80,7 @@ app.get('*', (req, res) => {
   }
 });
 
-// Database Connection
+mongoose.connect(process.env.MONGODB_URI)
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.error('MongoDB connection error:', err));
