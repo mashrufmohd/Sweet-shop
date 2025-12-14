@@ -11,6 +11,10 @@
   ],
   "routes": [
     {
+      "src": "/favicon.svg",
+      "dest": "/favicon.svg"
+    },
+    {
       "src": "/assets/(.*)",
       "dest": "/assets/$1"
     },
