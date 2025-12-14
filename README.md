@@ -435,32 +435,6 @@ I used AI tools minimally as a supplementary assistant, not as a primary develop
 
 **The bottom line**: This is my work. AI was used as a minor productivity tool (like autocomplete), not as the developer. I own and understand 100% of this codebase.
 
-## 📱 Application Screenshots
-
-### Home Page
-![Home Page - Browse our sweet collection](./screenshots/home.png)
-*Main landing page with featured sweets and hero section*
-
-### Shop Page  
-![Shop - Search and filter sweets](./screenshots/shop.png)
-*Shop page with advanced search, filtering, and category options*
-
-### Shopping Cart
-![Cart - Review your order](./screenshots/cart.png)
-*Shopping cart with quantity adjustments and checkout*
-
-### Admin Dashboard
-![Admin Dashboard - Analytics and management](./screenshots/admin.png)
-*Admin panel with sales analytics, inventory management, and order tracking*
-
-### Product Management
-![Admin - Manage inventory](./screenshots/admin-products.png)
-*Add, edit, and delete products with image upload*
-
-### Order History
-![Order History - Track purchases](./screenshots/orders.png)
-*User order history with status tracking*
-
 ## 🔐 Security Considerations
 
 - Passwords hashed using bcryptjs (salt rounds: 10)
@@ -550,4 +524,3 @@ This project was created as part of a TDD Kata assessment and is for educational
 
 ---
 
-Made with ❤️ and ☕ by Mashruf Mohd | Powered by AI-assisted development
