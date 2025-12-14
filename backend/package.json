@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "Backend for Sweet Spot Manager",
+  "description": "Backend for Sweet Shop Manager",
   "main": "index.js",
   "type": "module",
   "scripts": {

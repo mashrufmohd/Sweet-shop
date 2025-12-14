@@ -1,4 +1,4 @@
-# Sweet Spot Manager 🍬
+# Sweet Shop Manager 🍬
 
 A full-stack Sweet Shop Management System built with React, Node.js, Express, and MongoDB.
 

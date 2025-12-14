@@ -73,7 +73,7 @@ export default function LoginPage() {
                 {isAdminMode ? 'Admin Login' : 'Welcome back'}
               </CardTitle>
               <CardDescription className="text-gray-600">
-                {isAdminMode ? 'Sign in to admin dashboard' : 'Sign in to your Sweet Spot account'}
+                {isAdminMode ? 'Sign in to admin dashboard' : 'Sign in to your Sweet Shop account'}
               </CardDescription>
             </div>
           </CardHeader>

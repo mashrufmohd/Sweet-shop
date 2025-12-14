@@ -57,7 +57,7 @@ app.use('/static', express.static(path.join(__dirname, 'static')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/api', (req, res) => {
-  res.json({ message: 'Welcome to Sweet Spot Manager API' });
+  res.json({ message: 'Welcome to Sweet Shop Manager API' });
 });
 
 app.use('/api/v1/auth', authRoutes);

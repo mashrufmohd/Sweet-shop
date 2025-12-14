@@ -28,7 +28,7 @@ export default function RegisterPage() {
       const response = await api.register({ name, email, password });
       login(response.result, response.token);
       toast({
-        title: 'Welcome to Sweet Spot!',
+        title: 'Welcome to Sweet Shop!',
         description: 'Your account has been created successfully.',
       });
       navigate('/shop');
@@ -58,7 +58,7 @@ export default function RegisterPage() {
             </div>
             <div className="space-y-1">
               <CardTitle className="text-2xl text-gray-900">Create an account</CardTitle>
-              <CardDescription className="text-gray-600">Join Sweet Spot and start shopping</CardDescription>
+              <CardDescription className="text-gray-600">Join Sweet Shop and start shopping</CardDescription>
             </div>
           </CardHeader>
           <form onSubmit={handleSubmit}>

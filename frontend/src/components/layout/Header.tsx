@@ -41,7 +41,7 @@ export function Header() {
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-r from-orange-500 to-pink-500">
             <Candy className="h-5 w-5 text-white" />
           </div>
-          <span className="text-xl font-bold text-gray-900">Sweet Spot</span>
+          <span className="text-xl font-bold text-gray-900">Sweet Shop</span>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
